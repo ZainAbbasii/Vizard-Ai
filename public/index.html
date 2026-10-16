@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cutroom | Turn one long video into clips worth posting</title>
+  <meta name="description" content="Upload a podcast, webinar, or interview. Cutroom finds the strongest moments, reframes them for vertical, and adds captions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Cutroom</a>
+      <nav class="nav" aria-label="Main">
+        <a href="#how">How it works</a>
+        <a href="#editor">Editor</a>
+        <a href="/pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--primary" href="#try">Find clips</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <h1>Turn one long video into clips worth posting.</h1>
+        <p class="lede">Drop in a podcast, webinar, or interview. Cutroom picks the strongest moments, reframes them for vertical, and burns in captions.</p>
+
+        <form class="try" id="try" novalidate>
+          <label class="sr-only" for="video-url">Video link</label>
+          <div class="try-row">
+            <input id="video-url" name="url" type="url" inputmode="url" placeholder="Paste a YouTube, Vimeo, or .mp4 link" autocomplete="off">
+            <button class="btn btn--primary" type="submit" id="run">Find clips</button>
+          </div>
+          <div class="try-sub">
+            <span>No link handy?</span>
+            <button class="linklike" type="button" id="run-demo">Run the sample episode</button>
+            <span id="mode-note"></span>
+          </div>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="stage" id="stage" hidden>
+          <div class="stage-head">
+            <span class="stage-title" id="stage-title"></span>
+            <span id="stage-count"></span>
+          </div>
+          <div id="timeline-wrap">
+            <div class="timeline" id="timeline" aria-hidden="true"></div>
+            <div class="ticks" id="ticks" aria-hidden="true"></div>
+          </div>
+          <div class="clips" id="clips"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="who">
+      <div class="wrap split">
+        <div>
+          <h2>Built for people who already record long video.</h2>
+          <p class="lede">If an hour of talking should become a week of posts, this is the tool.</p>
+        </div>
+        <ul class="audience">
+          <li><h3>Podcasters and creators</h3><p>Clip every episode into shorts without hiring an editor.</p></li>
+          <li><h3>Coaches and consultants</h3><p>Turn client calls and workshops into proof people can scroll.</p></li>
+          <li><h3>Marketing teams</h3><p>Stretch one webinar into a month of social posts.</p></li>
+          <li><h3>Agencies and freelancers</h3><p>Handle more client channels without growing the editing team.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="wrap">
+        <h2>From raw recording to scheduled post in three steps.</h2>
+        <ol class="steps">
+          <li>
+            <h3>Upload or paste a link</h3>
+            <p>Cutroom transcribes the recording and tells speakers apart.</p>
+          </li>
+          <li>
+            <h3>Review the picks</h3>
+            <p>Each clip comes with a score and a one-line reason, so you can decide fast.</p>
+          </li>
+          <li>
+            <h3>Publish or download</h3>
+            <p>Export the file, share a link, or schedule it to your connected accounts.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="editor">
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <h2>Edit the video by editing the words.</h2>
+            <p class="lede">Click a word to cut it. Filler words are highlighted so they are easy to spot.</p>
+          </div>
+          <div class="editor">
+            <div class="editor-bar">
+              <span class="readout" id="readout" aria-live="polite"></span>
+              <span>
+                <button class="btn" type="button" id="cut-fillers">Cut filler words</button>
+                <button class="linklike" type="button" id="reset-words">Reset</button>
+              </span>
+            </div>
+            <p class="transcript" id="transcript"></p>
+          </div>
+        </div>
+        <ul class="feature-list">
+          <li><h3>Captions in your style</h3><p>Animated captions with emoji and keyword emphasis.</p></li>
+          <li><h3>Caption translation</h3><p>Translate captions to reach viewers in other languages.</p></li>
+          <li><h3>One-click aspect ratios</h3><p>Switch between vertical, square, portrait, and widescreen.</p></li>
+          <li><h3>Brand templates</h3><p>Save fonts, colors, logos, and outros once. Apply them to every clip.</p></li>
+          <li><h3>Timeline fine-tuning</h3><p>Trim down to the second when text editing is not enough.</p></li>
+          <li><h3>Shareable links</h3><p>Send a project to a teammate or client for review.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap split">
+        <div>
+          <h2>Questions people ask first.</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>What kinds of video work best?</summary>
+            <p>Talking-head content: podcasts, interviews, webinars, courses, and recorded calls. Clip quality is lower on chaotic, multi-speaker footage, so plan to review picks.</p>
+          </details>
+          <details>
+            <summary>How are credits counted?</summary>
+            <p>One credit equals one minute of source video you upload, no matter how many clips come out. Trim dead air before uploading to save credits.</p>
+          </details>
+          <details>
+            <summary>Can I connect it to my own tools?</summary>
+            <p>Yes. This project includes a small Node.js API proxy so you can submit a video and fetch clips from your own backend.</p>
+          </details>
+          <details>
+            <summary>Is the demo using real AI?</summary>
+            <p>The sample episode is scripted. Turn on live mode by adding an API key to the server's .env file, and the form will submit real videos.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta">
+      <div class="wrap">
+        <h2>Find the clips hiding in your last recording.</h2>
+        <a class="btn" href="#try">Try it now</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; <span id="year"></span> Cutroom. Template project.</span>
+      <nav aria-label="Footer">
+        <a href="/pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#try">Try it</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

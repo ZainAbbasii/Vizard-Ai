@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pricing | Cutroom</title>
+  <meta name="description" content="Pick a plan by how many minutes of video you upload each month.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Cutroom</a>
+      <nav class="nav" aria-label="Main">
+        <a href="/#how">How it works</a>
+        <a href="/#editor">Editor</a>
+        <a href="/pricing" aria-current="page">Pricing</a>
+        <a href="/#faq">FAQ</a>
+        <a class="btn btn--primary" href="/#try">Find clips</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="wrap">
+        <h1>Pay for the minutes you upload.</h1>
+        <p class="lede">One credit equals one minute of source video. Clips are unlimited.</p>
+
+        <div class="calc" id="calc">
+          <div style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center">
+            <label for="minutes"><strong>Minutes uploaded per month</strong></label>
+            <div class="toggle" role="group" aria-label="Billing period">
+              <button type="button" id="bill-month" aria-pressed="true">Monthly</button>
+              <button type="button" id="bill-year" aria-pressed="false">Yearly (save 20%)</button>
+            </div>
+          </div>
+          <input type="range" id="minutes" min="0" max="5" step="1" value="1" aria-describedby="calc-hint">
+          <p id="calc-hint"><output id="minutes-out" for="minutes"></output> uploaded, about <span id="hours-out"></span> of footage.</p>
+        </div>
+
+        <div class="plans">
+          <article class="plan">
+            <h2 style="font-size:var(--step-1)">Free</h2>
+            <p class="price">$0 <small>/month</small></p>
+            <ul>
+              <li>60 credits each month</li>
+              <li>720p exports with watermark</li>
+              <li>Full access to the editor</li>
+              <li>3-day storage</li>
+              <li>1 connected social account</li>
+            </ul>
+            <a class="btn" href="/#try">Start free</a>
+          </article>
+
+          <article class="plan plan--lead">
+            <h2 style="font-size:var(--step-1)">Creator</h2>
+            <p class="price"><span id="price-creator">$0</span> <small>/month</small></p>
+            <ul>
+              <li><span id="credits-creator">0</span> credits each month</li>
+              <li>No watermark, 4K exports</li>
+              <li>Scheduled posts</li>
+              <li>100 GB storage</li>
+              <li>6 connected social accounts</li>
+            </ul>
+            <a class="btn btn--primary" href="/#try">Choose Creator</a>
+          </article>
+
+          <article class="plan">
+            <h2 style="font-size:var(--step-1)">Business</h2>
+            <p class="price"><span id="price-business">$0</span> <small>/month</small></p>
+            <ul>
+              <li>Everything in Creator</li>
+              <li>Shared workspace and team seats</li>
+              <li>Brand kit with custom fonts</li>
+              <li>Unlimited storage</li>
+              <li>20 connected social accounts</li>
+            </ul>
+            <a class="btn" href="/#try">Choose Business</a>
+          </article>
+        </div>
+        <p style="margin-top:1rem;color:var(--slate);font-size:var(--step--1)">Prices on this page are placeholders. Edit the TIERS table in <code>public/js/main.js</code> to set your own.</p>
+
+        <div class="compare-scroll">
+          <table class="compare">
+            <caption class="sr-only">Plan comparison</caption>
+            <thead>
+              <tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Creator</th><th scope="col">Business</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Max upload length</th><td>60 min</td><td>600 min</td><td>600 min</td></tr>
+              <tr><th scope="row">Export quality</th><td>720p</td><td>4K</td><td>4K</td></tr>
+              <tr><th scope="row">Export length</th><td>10 min</td><td>Any</td><td>Any</td></tr>
+              <tr><th scope="row">Brand templates</th><td>No</td><td>Yes</td><td>Yes</td></tr>
+              <tr><th scope="row">Brand kit and custom fonts</th><td>No</td><td>No</td><td>Yes</td></tr>
+              <tr><th scope="row">Link sharing</th><td>Exports only</td><td>Exports only</td><td>Projects and exports</td></tr>
+              <tr><th scope="row">Team seats</th><td>No</td><td>No</td><td>Yes</td></tr>
+              <tr><th scope="row">API access</th><td>No</td><td>Yes</td><td>Yes</td></tr>
+              <tr><th scope="row">Support</th><td>Email</td><td>Priority</td><td>Priority</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; <span id="year"></span> Cutroom. Template project.</span>
+      <nav aria-label="Footer"><a href="/">Home</a><a href="/#faq">FAQ</a></nav>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
